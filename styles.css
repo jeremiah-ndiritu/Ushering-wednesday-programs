@@ -1,0 +1,368 @@
+:root{
+    --upcoming-events: 3;
+    --card-grid-margin-top: 90px;
+    --up-ev-width:calc(100vw / var(--upcoming-events) - 2vw);
+}
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0px;
+    box-sizing: border-box;
+}
+html{
+    width: 100vw;
+    height: 100vh;
+}
+header{
+    background: linear-gradient(to right,purple,pink);
+    position: sticky;
+    top: 0px;
+    min-width: 100%;
+    height: fit-content;
+    padding-bottom: 1vh;
+    z-index: 1000;
+}
+.no{
+    font-size: max(50px, 2vw);
+    text-indent: 10px;
+    text-shadow: #999957;
+    display:flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+.date{
+    background: rebeccapurple;
+    font-weight: bold;
+    display:flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+.theme{
+    background: linear-gradient(to right,#800fff,greenyellow,#5f20a7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: calc(1rem,1.3rem,1.5rem);
+    font-weight: bold;    
+    flex-grow: 1;
+    flex-wrap: wrap;
+    position: relative;
+    min-width: 80%;
+    height: fit-content;
+    padding: 0.5vh 0px 0.5vh 0px;
+    .theme-tag{
+        color: red;
+        width: 60%;
+        display:flex;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .theme-content{
+        padding: 5px;
+         background: linear-gradient(to right, navy,rgb(50, 148, 205),blue);
+         background-clip: text;
+         color: transparent;
+         display:flex;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.content{
+    background: radial-gradient(wheat,gray,#5f20a7,rebeccapurple);
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px; 
+    border-radius: 20px;
+    padding: 5px 5px;
+    height: fit-content;
+    gap: 3vh;
+    position:relative;
+    width: 98%;
+    flex-grow: 1;
+    font-size: clamp(1rem, 1.1rem, 1.3rem);
+    font-weight: bold;
+
+    a{
+        text-decoration: none;
+    }
+      
+}
+.minister{
+    background: linear-gradient(45deg,#800fff,black,#5f20a7);
+    color: brown;
+    display:flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: min(fit-content, 2vw);
+    .minister-tag{
+        color: aqua;
+        
+    }
+    .minister-name{
+        justify-content: center;
+    }
+}
+.programmer{
+    background:linear-gradient(45deg,#800fff,pink,#5f20a7);
+    color:rgb(128, 0, 117);
+    display:flex;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: min(fit-content, 2vw);
+    .programmer-tag{
+        color: azure;
+    }
+    .programmer-name{
+        color: aquamarine;
+    }
+}
+.devotional-lead{
+    background:linear-gradient(45deg,#800fff,#999957,#5f20a7);
+    color: red;
+    display:flex;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        font-size: min(fit-content, 2vw);
+    .dv-lead-tag{
+        color:rgb(76, 49, 77);
+    }
+    .dv-lead-name{
+        color: rgb(43, 8, 13);
+    }
+}
+.contact{
+    color: green;
+    
+}
+
+h1{
+   text-align: center;
+   place-self: center;
+   font-weight: 600;
+   color: blue;
+   box-sizing: border-box;
+  
+}
+.menu{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 100%;
+    flex-grow: 1;
+}
+.menu-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    background: linear-gradient(to right, pink,wheat);
+    border-radius: 6vw;
+    margin: 1vw;
+    padding: 3px;
+    color: white;
+
+    &:hover{
+        transform: scale(1.09);
+        height: -3px;
+        color: purple;
+        background: linear-gradient(to left, pink,wheat);
+        cursor:pointer;
+    }
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    gap: 20px;
+}
+.card-grid{
+    /*  */
+    max-width: 100vw;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,max(250px, 20vw));
+    grid-template-rows: repeat(auto-fill,max(fit-content, 30vh));
+    row-gap: 2vh; 
+    justify-content: space-around;
+    background: radial-gradient(yellow,pink,maroon);
+    padding: 1.5vw;
+    margin-top: var(--card-grid-margin-top);
+    margin-bottom: 0px;
+    flex-wrap: wrap;
+    
+}
+.upcoming-section{
+    background: red;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; 
+    width: clamp(88%,90%,1333px);
+    margin-inline: auto;
+    height: 40px;
+    border: 2px solid black;
+    padding: 1.5vh;
+    position: relative;
+    overflow: hidden;
+}
+@keyframes scroll-left {
+    to{
+        /* left: calc(90% - ((100vw - (100 / var(--upcoming-events)))) * -1); */
+        left: calc(var(--up-ev-width) * -1);
+    }
+}
+.upcoming{
+    color: blue;
+    width: var(--up-ev-width) ;
+    /* width: 86px; */
+    height: 40px;
+    background: greenyellow;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    border-radius: 7px;
+    position: absolute;
+    padding: 4px;
+    left: max(calc(100vw / var(--upcoming-events) - 2vw), 100%);
+    animation: scroll-left 16s linear infinite;
+}
+.up1{
+    animation-delay: calc(16s / 3 * (3 - 1) * -1);
+}
+.up2{
+    animation-delay: calc(16s / 3 * (3 - 2) * -1);
+}
+.up3{
+    animation-delay: calc(16s / 3 * (3 - 3) * -1);
+}
+
+.card{
+    background: linear-gradient(to right, #800fff,rebeccapurple);
+
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 2vh 10px 2vh 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3vh;
+    position:relative;
+    flex-grow: 1;
+    z-index: 999;
+
+}  
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 30vh;
+    width: 100vw;
+
+    padding: 20px;
+    background: radial-gradient(pink,wheat,rgb(238, 103, 103),white);
+    margin-top: 0px;
+}
+.best-wishes{
+    font-size: clamp(1vw, 2vw, 3vw);
+    font-style: italic;
+    font-weight: 711;
+    z-index: 2;
+    background: linear-gradient(to right, blue,navy,skyblue);
+    background-clip:text;
+    color: transparent;
+    
+}
+
+.love-emoji{
+    position: absolute;
+    font-size: 100px;
+    z-index: 1;
+    height: 24vh;
+    border-radius: 50%;
+    border: 20px blue;
+}
+
+@media (orientation: portrait){
+    *{
+        font-family: "Poppins", sans-serif;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+    .card-grid{
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: -24px;
+        column-gap: 2vh;
+    }
+    .card{
+        padding: 10px;
+    }
+}
+ @media (orientation: landscape){
+    *{
+        font-family: "Poppins", sans-serif;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+    h1{
+        font-weight: 400;
+        font-size: clamp(5w, 3rem, 50px);
+    }
+    /* header{
+        height: var(--card-grid-margin-top);
+    } */
+    .card-grid{
+        /* grid-template-columns: repeat(auto-fill, 35vw);  */
+        background-color: gray;
+        margin-top: 10vh;
+        font-size: max(2vw,30px);
+
+        
+    }
+    .card{
+        padding: 4vh;
+        border-radius: 5vw;
+        height: 100%;
+
+        .content{
+            font-size: max(2vw,24px);
+            max-width: 98%;
+        }
+        .minister{
+            width: fit-content;
+            font-size: max(1.6vw,28px);
+            padding:20px;
+        }
+        .programmer{
+            width: fit-content;
+            font-size: max(1.6vw,28px);
+            padding:20px;
+        }
+        .devotional-lead{
+            width: fit-content;
+            font-size: max(1.6vw,28px);
+            padding:20px;
+        }
+    }
+    .upcoming{
+        height: fit-content;
+        padding: 3vh;
+    }
+}  
